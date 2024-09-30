@@ -143,6 +143,7 @@ public static class FeatureFlagKeys
     public const string EnableNewCardCombinedExpiryAutofill = "enable-new-card-combined-expiry-autofill";
     public const string StorageReseedRefactor = "storage-reseed-refactor";
     public const string TrialPayment = "PM-8163-trial-payment";
+    public const string LimitCollectionCreationDeletionSplit = "pm-10863-limit-collection-creation-deletion-split";
 
     public static List<string> GetAllKeys()
     {
