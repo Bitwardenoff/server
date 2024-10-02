@@ -18,6 +18,9 @@ public class GetUsersListQuery : IGetUsersListQuery
         string emailFilter = null;
         string usernameFilter = null;
         string externalIdFilter = null;
+        count ??= 50;
+        startIndex ??= 1;
+
         if (!string.IsNullOrWhiteSpace(filter))
         {
             var filterLower = filter.ToLowerInvariant();
@@ -56,7 +59,7 @@ public class GetUsersListQuery : IGetUsersListQuery
             }
             totalResults = userList.Count;
         }
-        else if (string.IsNullOrWhiteSpace(filter) && startIndex.HasValue && count.HasValue)
+        else if (string.IsNullOrWhiteSpace(filter))
         {
             userList = orgUsers.OrderBy(ou => ou.Email)
                 .Skip(startIndex.Value - 1)
